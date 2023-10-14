@@ -1,7 +1,7 @@
 import './globals.css'
+import './tailwind-globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Header from './modules/header/header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +16,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='bg-brand_color_100'>
+    <html lang="en">
+      <head>
+        <link href="https://fonts.cdnfonts.com/css/sansation" rel="stylesheet" />
+      </head>
       <body className={inter.className}>
         {/* <Header/> */}
         {children}

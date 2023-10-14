@@ -4,7 +4,7 @@ import Header from './modules/header/header'
 
 export default function Home() {
   return (
-    <main className='bg-brand_color_100 text-brand_text'>
+    <main className='bg-brand_color_100 text-brand_text font-sansation p-4'>
       <HomePage />
     </main>
   )

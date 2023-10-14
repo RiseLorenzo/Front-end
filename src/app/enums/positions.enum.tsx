@@ -8,3 +8,14 @@ export enum PositionsEnum {
     "Prefeito" = 11,
     "Vereador" = 13
 }
+
+export enum PositionsNameEnum {
+    "Presidente" = "Presidente",
+    "Governador" = "Governador",
+    "Senador" = "Senador",
+    "Deputado_Federal" = "Deputado Federal",
+    "Deputado_Estadual" = "Deputado Estadual",
+    "Deputado_Distrital" = "Deputado Distrital",
+    "Prefeito" = "Prefeito",
+    "Vereador" = "Vereador"
+}

@@ -14,6 +14,9 @@ const config: Config = {
         brand_color_300: '#C0C0C0',
         brand_color_400: '#60a5fa',
         brand_text: '#1C1C1C'
+      },
+      fontFamily: {
+        sansation: "'Sansation', sans-serif"
       }
     },
   },
