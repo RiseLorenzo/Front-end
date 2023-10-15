@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PositionsEnum, PositionsNameEnum } from "../enums/positions.enum";
+import { PositionsEnum, PositionsNameEnum } from "../../enums/positions.enum";
 import './positions.css';
 
 export default function PositionsList() {
@@ -16,7 +16,7 @@ export default function PositionsList() {
 
     const mappedPositions = positions.map((item) => {
         return (
-            <Link href={'/'} key={item.id}>
+            <Link href={'/positions/candidates'} key={item.id}>
                 <li className="flex w-full my-3 p-5 text-left rounded-md bg-brand_color_100 shadow-md transition-all duration-300 hover:cursor-pointer hover:bg-brand_color_400 hover:shadow-lg">
                     { item.name }
                 </li>

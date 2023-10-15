@@ -1,21 +1,34 @@
-import { CandidatesByPositionProps } from "@/app/props/candidates-by-position";
+import { Deputies } from "@/services/api.service";
+import { CandidatesProps } from "@/utils/types/candidatesProps";
+import Link from "next/link";
+import '../../positions.css';
 
-export default function ListCandidates(candidatesByPosition: CandidatesByPositionProps) {
+
+export default async function ListCandidates() {
+    const service = new Deputies();
+    const deputies: CandidatesProps[] = [];
+
+    const res = await service.getAllDeputies().then(({ dados }) => {
+        dados.map((item:CandidatesProps) => {
+            deputies.push(item);
+        })
+    });
+
+    const mappedDeputies = deputies.map((deputy) => {
+        return (
+            <Link href={'/positions'} key={deputy.id}>
+                <li className="flex w-full my-3 p-5 text-left rounded-md bg-brand_color_100 shadow-md transition-all duration-300 hover:cursor-pointer hover:bg-brand_color_400 hover:shadow-lg">
+                    { deputy.nome }
+                </li>
+            </Link>
+        )
+    });
+
     return (
         <>
         <div>
-            candidate list component
             <ul>
-                <li>{candidatesByPosition?.ANO_ELEICAO}</li>
-                <li>{candidatesByPosition?.CPF_CANDIDATO}</li>
-                <li>{candidatesByPosition?.DESCRICAO_CARGO}</li>
-                <li>{candidatesByPosition?.DESCRICAO_SEXO}</li>
-                <li>{candidatesByPosition?.DESC_SIT_TOT_TURNO}</li>
-                <li>{candidatesByPosition?.NOME_URNA_CANDIDATO}</li>
-                <li>{candidatesByPosition?.NUMERO_CANDIDATO}</li>
-                <li>{candidatesByPosition?.NUM_TURNO}</li>
-                <li>{candidatesByPosition?.SIGLA_PARTIDO}</li>
-                <li>{candidatesByPosition?.SIGLA_UE}</li>
+                { mappedDeputies }
             </ul>
         </div>
         </>

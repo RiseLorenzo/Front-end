@@ -1,13 +1,17 @@
-"use client"
-import { useState } from "react";
-import { CandidatesByPositionProps } from "@/app/props/candidates-by-position";
+import ListCandidates from "./components/candidate-list";
+import '../positions.css';
 
 export default function Candidates() {
-    const [candidate, setCandidate] = useState<CandidatesByPositionProps | {}>({});
-
     return (
         <>
-            <div>Candidates</div>
+            <div className="flex w-full flex-col items-center justify-center bg-brand_color_100 text-brand_text my-6">
+                <div className="w-full text-center p-3">
+                    <h1 className="text-xl my-2">Candidatos</h1>
+                    <p>Selecione o candidato que deseja ver os detalhes.</p>
+                </div>
+
+                <ListCandidates />
+            </div>
         </>
     )
 }
