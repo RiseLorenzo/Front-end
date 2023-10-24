@@ -1,4 +1,4 @@
-export type CandidatesProps = {
+export type CandidatesType = {
     id: number; 
     uri: string;
     nome: string; 
@@ -10,7 +10,7 @@ export type CandidatesProps = {
     email: string;
 }
 
-export type CandidatesCepespProps = {
+export type CandidatesCepespType = {
     ANO_ELEICAO: string;
     NUM_TURNO: string;
     SIGLA_UE: string;
