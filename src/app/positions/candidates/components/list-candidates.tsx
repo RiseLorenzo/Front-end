@@ -22,12 +22,12 @@ export default async function ListCandidates(listCandidatesProps: ListCandidates
                             <Card
                                 direction={{ base: 'row' }}
                                 variant='outline'
-                                className="transition-all overflow-hidden mx-3 my-3 p-1 rounded-md hover:shadow-md hover:scale-105 hover:brightness-90"
+                                className="max-w-[390px] h-[198px] transition-all overflow-hidden mx-3 my-3 p-1 rounded-md hover:shadow-md hover:scale-105 hover:brightness-90"
                             >
-                            <div className="relative w-[157px]">
+                            <div className="relative w-[157px] h-full">
                                 <Image
                                     objectFit='cover'
-                                    className="flex w-full"
+                                    className="flex w-full h-full"
                                     src={deputy.urlFoto}
                                     alt={deputy.nome}
                                     borderRadius='md'
@@ -35,10 +35,10 @@ export default async function ListCandidates(listCandidatesProps: ListCandidates
                             </div>
 
                             <Stack>
-                                <CardBody>
+                                <CardBody className="flex flex-wrap w-full h-full">
                                 <Heading size='md' fontWeight='medium' mb='1'>{deputy.nome} - {deputy.siglaUf}</Heading>
                                 
-                                <Text width='fit-content' py='0.5' px='1' className="text-brand_color_100 bg-brand_color_400 rounded-sm">
+                                <Text width='fit-content' height='fit-content' py='0.5' px='1' className="text-brand_color_100 bg-brand_color_400 rounded-sm">
                                     Partido {deputy.siglaPartido}
                                 </Text>
                                 </CardBody>
